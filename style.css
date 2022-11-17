@@ -1,0 +1,361 @@
+html, body, span, applet, object, iframe, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html {
+    height: 100%;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.header {
+    display: flex;
+    height: 90px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#c7b624;
+    box-sizing:border-box;
+    padding: 0 20px;
+    position: fixed;
+    z-index: 99;
+}
+.right {
+    display: flex;
+    padding:0 20px;
+}
+.item {
+    padding: 2px;
+    font-weight: 900;
+}
+.main {
+    display: flex;
+    padding-top: 90px;
+    width: 100%;
+    height: 100%;
+}
+.aside1 {
+    background-color:#d679f2;
+    width: 210px;
+    text-align: center;
+    padding-top: 5px;
+}
+.aside2 {
+    background-color:#9da7c9;
+    width: 210px;
+    text-align: center;
+    padding-top: 5px;
+}
+.content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+.footer {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    align-items:center;
+    background-color: aquamarine;
+    text-align: center;
+    justify-content: center;
+    bottom: 0;
+}
+.content {
+    text-align: center;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.nature {
+    border-radius: 100%;
+    border: 10px solid #c799e8;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    box-shadow: 0 0 30px blueviolet;
+}
+.card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+    border: 2px solid blueviolet;
+    border-radius: 20px;
+    width: 250px;
+    margin: 10px;
+}
+.btn {
+    background-color: #8038d1;
+    border-radius: 50px;
+    width: 50px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top:auto;
+}
+.card:hover {
+    box-shadow: 0 0 5px #57136b;
+}
+.btn:hover {
+    background-color: burlywood;
+    color:#57136b;
+}
+.btn-as1 {
+    background-color:darkkhaki;
+    border: 2px solid goldenrod;
+    position: absolute;
+    margin-top: 90px;
+    padding-left: 20px;
+    width: 100%;
+    font-size: large;
+    visibility: hidden;
+    line-height: 25px;
+}
+
+#menu__toggle {
+    opacity: 0;
+}
+/* стилізуємо кнопку */
+.main-nav-hamburger-menu {
+    display: none;
+}
+.menu__btn {
+     display: flex; /* використовуємо flex для центрування вмісту */
+     align-items: center;  /* центруємо вміст кнопки */
+     position: fixed;
+     top: 35px;
+     right: 35px;
+     width: 26px;
+     height: 26px;
+     cursor: pointer;
+     z-index: 1;
+ }
+ /* додаємо "гамбургер" */
+ .menu__btn > span,
+ .menu__btn > span::before,
+ .menu__btn > span::after {
+     display: block;
+     position: absolute;
+     width: 100%;
+     height: 2px;
+     background-color: blueviolet;
+ }
+ .menu__btn > span::before {
+     content: '';
+     top: -8px;
+ }
+ .menu__btn > span::after {
+     content: '';
+     top: 8px;
+ }
+ /* контейнер меню */
+ .menu__box {
+     display: block;
+     position: fixed;
+     visibility: hidden;
+     top: 0;
+     right: -100%;
+     width: 300px;
+     height: 100%;
+     margin: 0;
+     padding: 80px 0;
+     list-style: none;
+     text-align: center;
+     background-color:#e0f542;
+     box-shadow: 0 0 15px #57136b;
+ }
+
+ /* элементи меню */
+ .menu__item {
+     display: block;
+     padding: 12px 24px;
+     color: #333;
+     font-family: 'Roboto', sans-serif;
+     font-size: 20px;
+     font-weight: 600;
+     text-decoration: none;
+ }
+ .menu__item:hover {
+     background-color: blueviolet;
+ }
+ #menu__toggle:checked ~ .menu__btn > span {
+     transform: rotate(45deg);
+ }
+
+ #menu__toggle:checked ~ .menu__btn > span::before {
+     top: 0;
+     transform: rotate(0);
+ }
+
+ #menu__toggle:checked ~ .menu__btn > span::after {
+     top: 0;
+     transform: rotate(90deg);
+ }
+
+ #menu__toggle:checked ~ .menu__box {
+     visibility: visible;
+     right: 0;
+ }
+ .menu__btn > span,
+ .menu__btn > span::before,
+ .menu__btn > span::after {
+     transition-duration: .25s;
+ }
+ .menu__box {
+     transition-duration: .25s;
+ }
+ .menu__item {
+     transition-duration: .25s;
+ }
+
+@media (min-width: 576px) {
+    .header {
+        height: 100px;
+    }
+    .aside1 {
+        display: none;
+    }
+    .aside2 {
+        display: none;
+    }
+    .btn-as1 {
+        visibility: visible;
+        margin-top: 95px;
+    }
+    p {
+        padding-top: 10px;
+        font-size: larger;
+    }
+    .card {
+        font-size: larger;
+    }
+    .nature {
+        width: 150px;
+        height: 150px;
+    }
+    .main-nav-hamburger-menu {
+        display: block;
+    }
+    .items {
+        display: none;
+    }  
+}
+
+
+@media (min-width: 768px) {
+    .header {
+        height: 95px;
+        display: fixed;
+        top: 0;
+    }
+    .aside1 {
+        display: none;
+        width: 210px;
+    }
+    .aside2 {
+        display: block;
+        width: 400px;
+        margin-top: 25px;
+        margin-right: 0;
+    }
+    .btn-as1 {
+        display: block;
+    }
+    p {
+        padding-top: 10px;
+        font-size:large;
+    }
+    .card {
+        font-size: large;
+    }
+    .nature {
+        width: 125px;
+        height: 125px;
+    }
+    .main-nav-hamburger-menu {
+        display: none;
+    }
+    .items {
+        display: flex;
+        font-size: larger;
+    }  
+    
+}
+
+
+@media (min-width: 992px) {
+    .header {
+        height: 90px;
+        display: fixed;
+    }
+    .aside1 {
+        display: block;
+    }
+    .aside2 {
+        display: block;
+        margin-top: 0;
+        width: 210px;
+    }
+    .btn-as1 {
+        display: none;
+    }
+    p {
+        padding-top: 0;
+        font-size:medium;
+    }
+    .card {
+        font-size: medium;
+    }
+    .nature {
+        width: 100px;
+        height: 100px;
+    }
+    .main-nav-hamburger-menu {
+        display: none;
+    }
+    .items {
+        display: flex;
+        font-size: large;
+    }
+    
+}
+
+
